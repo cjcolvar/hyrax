@@ -68,6 +68,15 @@ module Wings
           super(msg)
         end
       end
+
+      class FailedDestroyError < RuntimeError
+        attr_accessor :obj
+
+        def initialize(msg = nil, obj:)
+          self.obj = obj
+          super(msg)
+        end
+      end
     end
   end
 end
