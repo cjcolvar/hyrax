@@ -98,6 +98,16 @@ RSpec.shared_examples 'a Hyrax::Work' do
   it { is_expected.not_to be_file_set }
   it { is_expected.to be_pcdm_object }
   it { is_expected.to be_work }
+
+  describe '#state' do
+    it 'accepts URIS' do
+      uri = RDF::URI('http://example.com/ns/moomin_state')
+
+      expect { work.state = uri}
+        .to change { work.state }
+        .to uri
+    end
+  end
 end
 
 RSpec.shared_examples 'a Hyrax::FileSet' do

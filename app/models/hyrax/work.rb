@@ -9,6 +9,7 @@ module Hyrax
     include Hyrax::Schema(:core_metadata)
 
     attribute :member_ids, Valkyrie::Types::Array.of(Valkyrie::Types::ID).meta(ordered: true)
+    attribute :state,      Valkyrie::Types::URI.default(Hyrax::ResourceStatus::ACTIVE)
 
     ##
     # @return [Boolean] true
