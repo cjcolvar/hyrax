@@ -100,7 +100,7 @@ jobs:
     executor:
       name: 'samvera/ruby_fcrepo_solr_redis'
       ruby_version: << parameters.ruby_version >>
-    resource_class: medium
+    resource_class: << parameters.resource_class >>
     parallelism: << parameters.parallelism >>
     environment:
       COVERALLS_PARALLEL: true
